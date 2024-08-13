@@ -1,8 +1,11 @@
 package org.kakarla.OrchestratingPrecisionRealtime.Service;
 
+import org.kakarla.OrchestratingPrecisionRealtime.model.DecisionModel;
+
 public interface RealTime {
 
-    private boolean decisions() {
-        return false;
-    }
+     DecisionModel decisions();
+
+     void invokeRealTimelambda();
+
 }
