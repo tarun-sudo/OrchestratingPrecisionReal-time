@@ -15,7 +15,7 @@ public class LambdaInvoker implements Callable<String> {
         this.functionName = functionName;
     }
 
-    InvokeResponse trigger() throws Exception {
+    private String trigger() throws Exception {
         InvokeResponse invokeResponse = null;
         LambdaClient lambdaClient = LambdaClient.builder().build();
         try {
@@ -28,11 +28,11 @@ public class LambdaInvoker implements Callable<String> {
         } catch (Exception e) {
             throw new Exception("Failed to call Lambda request");
         }
-        return invokeResponse;
+        return invokeResponse.toString();
     }
 
     @Override
     public String call() throws Exception {
-        return "value";
+        return trigger();
     }
 }
