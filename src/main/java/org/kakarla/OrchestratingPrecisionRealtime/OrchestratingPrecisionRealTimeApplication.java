@@ -18,6 +18,13 @@ public class OrchestratingPrecisionRealTimeApplication {
 	 static int y = 2;
 	public static void main(String[] args) throws Exception {
 
+		for (int a = 5; a >= 1; a--) {
+			for (int b = 1; b <= a ; b++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+
 //		for (x= 2, y=2 ; x<y; x++) {
 //
 //		}
@@ -79,21 +86,23 @@ public class OrchestratingPrecisionRealTimeApplication {
 //
 //		}
 
-		int i = 0;
-		int j = 0;
-		int array[][][] = {{{1, 2}, {3, 4}}, {{11, 12}, {13, 14}}, {{22,23}, {24,25}}};
+//		int i = 0;
+//		int j = 0;
+//		int array[][][] = {{{1, 2}, {3, 4}}, {{11, 12}, {13, 14}}, {{22,23}, {24,25}}};
 //		System.out.println(array[1][1][1]);
 
-		do {
-			i++;
+//		do {
+//			i++;
 //			System.out.println(i + "i value");
-		} while (i < 10);
-		{
-			do {
-				j++;
+//		} while (i < 10);
+//		{
+//			do {
+//				j++;
 //				System.out.println(j + "j value");
-			} while (j < 8);
-		}
+//			} while (j < 8);
+//		}
+
+
 
 //		char charArray[] = new char[3];
 //		charArray[0] = 32;
@@ -117,31 +126,31 @@ public class OrchestratingPrecisionRealTimeApplication {
 //			}
 //		}
 
-		int numberofThreads = 10;
-		int numberOfInvocations = 10;
-		// Create a custom ThreadFactory with a base name
-		ConcurrentNumberThreadFactory threadFactory = new ConcurrentNumberThreadFactory("LambdaInvoker");
-		ExecutorService executorService = Executors.newFixedThreadPool(numberofThreads, threadFactory);
-		List<Future<String>> futureList = new ArrayList<>();
-
-		for (int x = 0; x<numberofThreads; x++) {
-			for (int y = 0; y< numberOfInvocations; y++) {
-				LambdaInvoker task = new LambdaInvoker("myfifrstLambda");
-				futureList.add(executorService.submit(task));
-			}
-		}
-
-		// Process the results
-		for (Future<String> future : futureList) {
-			try {
-				String result = future.get();
-				System.out.println("Lambda Invocation Result: " + result);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-
-		executorService.shutdown();
+//		int numberofThreads = 10;
+//		int numberOfInvocations = 10;
+//		// Create a custom ThreadFactory with a base name
+//		ConcurrentNumberThreadFactory threadFactory = new ConcurrentNumberThreadFactory("LambdaInvoker");
+//		ExecutorService executorService = Executors.newFixedThreadPool(numberofThreads, threadFactory);
+//		List<Future<String>> futureList = new ArrayList<>();
+//
+//		for (int x = 0; x<numberofThreads; x++) {
+//			for (int y = 0; y< numberOfInvocations; y++) {
+//				LambdaInvoker task = new LambdaInvoker("myfifrstLambda");
+//				futureList.add(executorService.submit(task));
+//			}
+//		}
+//
+//		// Process the results
+//		for (Future<String> future : futureList) {
+//			try {
+//				String result = future.get();
+//				System.out.println("Lambda Invocation Result: " + result);
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
+//		}
+//
+//		executorService.shutdown();
 
 //		try{
 
