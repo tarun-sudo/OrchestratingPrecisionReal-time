@@ -1,16 +1,9 @@
 package org.kakarla.OrchestratingPrecisionRealtime;
 
-import org.kakarla.OrchestratingPrecisionRealtime.Config.ThreadFactory.ConcurrentNumberThreadFactory;
-import org.kakarla.OrchestratingPrecisionRealtime.RealTimeProcessor.lambda.aws.LambdaInvoker;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 
 @SpringBootApplication
 public class OrchestratingPrecisionRealTimeApplication {

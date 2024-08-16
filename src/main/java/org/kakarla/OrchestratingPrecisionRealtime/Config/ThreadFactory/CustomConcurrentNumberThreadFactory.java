@@ -4,12 +4,12 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 
 
-public class ConcurrentNumberThreadFactory implements ThreadFactory {
+public class CustomConcurrentNumberThreadFactory implements ThreadFactory {
 
     private final String baseName;
     private final AtomicInteger counter = new AtomicInteger(0);
 
-    public ConcurrentNumberThreadFactory(String baseName) {
+    public CustomConcurrentNumberThreadFactory(String baseName) {
         this.baseName = baseName;
     }
 

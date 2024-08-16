@@ -1,7 +1,7 @@
 package org.kakarla.OrchestratingPrecisionRealtime.Service;
 
 
-import org.kakarla.OrchestratingPrecisionRealtime.Config.ThreadFactory.ConcurrentNumberThreadFactory;
+import org.kakarla.OrchestratingPrecisionRealtime.Config.ThreadFactory.CustomConcurrentNumberThreadFactory;
 import org.kakarla.OrchestratingPrecisionRealtime.RealTimeProcessor.lambda.aws.LambdaInvoker;
 import org.kakarla.OrchestratingPrecisionRealtime.model.DecisionModel;
 import org.springframework.stereotype.Component;
@@ -29,7 +29,7 @@ public class RealTimeServiceImpl implements RealTime {
         int numberOfInvocations = 10;
         try {
             // Create a custom ThreadFactory with a base name
-            ConcurrentNumberThreadFactory threadFactory = new ConcurrentNumberThreadFactory("LambdaInvoker");
+            CustomConcurrentNumberThreadFactory threadFactory = new CustomConcurrentNumberThreadFactory("LambdaInvoker");
             ExecutorService executorService = Executors.newFixedThreadPool(numberofThreads, threadFactory);
             List<Future<String>> futureList = new ArrayList<>();
 
